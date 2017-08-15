@@ -1,0 +1,25 @@
+0001   0000             	.ORG	0000H
+0002   0000 31 A0 00    	LXI	SP,00A0H
+0003   0003 E1          	POP	H
+0004   0004 4D          	MOV	C,L
+0005   0005 54          	MOV	D,H
+0006   0006 5C          	MOV	E,H
+0007   0007 0D          	DCR	C
+0008   0008 E1          LOOP:	POP	H
+0009   0009 7A          	MOV	A,D
+0010   000A BD          	CMP	L
+0011   000B D2 0F 00    	JNC	L1
+0012   000E 55          	MOV	D,L
+0013   000F 7B          L1:	MOV	A,E
+0014   0010 BD          	CMP	L
+0015   0011 DA 15 00    	JC	NEXT
+0016   0014 5D          	MOV	E,L
+0017   0015 3B          NEXT:	DCX	SP
+0018   0016 0D          	DCR	C
+0019   0017 C2 08 00    	JNZ	LOOP
+0020   001A 7A          	MOV	A,D
+0021   001B 32 50 00    	STA	0050H
+0022   001E 7B          	MOV	A,E
+0023   001F 32 51 00    	STA	0051H
+0024   0022 76          	HLT
+Number of errors = 0

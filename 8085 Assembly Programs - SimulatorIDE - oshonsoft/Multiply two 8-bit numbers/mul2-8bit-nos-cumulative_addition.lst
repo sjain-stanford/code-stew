@@ -1,0 +1,18 @@
+0001   0000             	.ORG	0000H
+0002   0000 21 50 00    START:	LXI	H,0050H
+0003   0003 AF          	XRA	A	; Ex-OR A with A --> A is made zero
+0004   0004 46          	MOV	B,M
+0005   0005 23          	INX	H
+0006   0006 56          	MOV	D,M
+0007   0007 0E 00       	MVI	C,00H	; Carry
+0008   0009 80          L1:	ADD	B
+0009   000A D2 0E 00    	JNC	L2
+0010   000D 0C          	INR	C
+0011   000E 15          L2:	DCR	d
+0012   000F C2 09 00    	JNZ	L1
+0013   0012 23          	INX	H
+0014   0013 77          	MOV	M,A
+0015   0014 23          	INX	H
+0016   0015 71          	MOV	M,C
+0017   0016 76          	HLT
+Number of errors = 0

@@ -1,0 +1,8 @@
+0001   0000             	.ORG	8200H
+0002   8200 21 40 82    START:	LXI	H,8240H
+0003   8203 7E          	MOV	A,M
+0004   8204 23          	INX	H
+0005   8205 96          	SUB	M
+0006   8206 32 50 82    	STA	8250H
+0007   8209 76          	HLT
+Number of errors = 0

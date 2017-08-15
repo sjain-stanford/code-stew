@@ -1,0 +1,12 @@
+1000 data1
+1003 LOCNa
+1006 data3
+1008 data2
+100b LOCNb
+100e data2
+100f A
+1010 LOCNb
+1013 C
+1014 data3
+1017 B
+1018 

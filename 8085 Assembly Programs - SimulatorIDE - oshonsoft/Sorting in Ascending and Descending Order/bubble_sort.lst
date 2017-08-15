@@ -1,0 +1,40 @@
+0001   0000             ; Sorting in Ascending Order by Bubble Sort
+0002   0000             ; Outer Loop: ( N-1 ) times
+0003   0000             ; Inner Loop: ( N-Outer Loop ) times each
+0004   0000             	.ORG	0000H
+0005   0000 21 50 00    START:	LXI	H,0050H
+0006   0003 4E          	MOV	C,M	; Outer Loop
+0007   0004 0D          	DCR	C
+0008   0005 51          REPEAT:	MOV	D,C	; Inner Loop
+0009   0006 21 51 00    	LXI	H,0051H
+0010   0009 7E          LOOP:	MOV	A,M
+0011   000A 23          	INX	H
+0012   000B BE          	CMP	M
+0013   000C DA 14 00    	JC	NEXT
+0014   000F 46          	MOV	B,M
+0015   0010 77          	MOV	M,A
+0016   0011 2B          	DCX	H
+0017   0012 70          	MOV	M,B
+0018   0013 23          	INX	H
+0019   0014 15          NEXT:	DCR	D
+0020   0015 C2 09 00    	JNZ	LOOP
+0021   0018 0D          	DCR	C
+0022   0019 C2 05 00    	JNZ	REPEAT
+0023   001C             
+0024   001C             ; Reversing the sorted array to get Descending Order
+0025   001C 01 50 00    	LXI	B,0050H
+0026   001F 0A          	LDAX	B
+0027   0020 6F          	MOV	L,A
+0028   0021 03          L1:	INX	B
+0029   0022 3D          	DCR	A
+0030   0023 C2 21 00    	JNZ	L1
+0031   0026 11 61 00    	LXI	D,0061H
+0032   0029 0A          L2:	LDAX	B
+0033   002A 12          	STAX	D
+0034   002B 0B          	DCX	B
+0035   002C 13          	INX	D
+0036   002D 2D          	DCR	L
+0037   002E C2 29 00    	JNZ	L2
+0038   0031 76          	HLT
+0039   0032             
+Number of errors = 0

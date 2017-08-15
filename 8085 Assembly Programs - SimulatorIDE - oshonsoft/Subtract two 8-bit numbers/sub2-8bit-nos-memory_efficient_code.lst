@@ -1,0 +1,23 @@
+0001   0000             ; Program occupies only 0000H - 0012H in the memory
+0002   0000             ; Does not use LDA, STA (3-byte instructions)
+0003   0000             ; Uses increment of register pair technique for different addresses (INX, INR are 1-byte instructions)
+0004   0000             ; For negative numbers, the output is in sign magnitude form: e.g.
+0005   0000             ; 02H - 09H = 07H (magnitude) with the sign bit set as '1'
+0006   0000             ; 09H - 02H = 07H (magnitude) with the sign bit set as '0'
+0007   0000             
+0008   0000             	.ORG	0000H
+0009   0000 0E 00       START:	MVI	C,00H		; represent borrow
+0010   0002 21 50 00    	LXI	H,0050H
+0011   0005 7E          	MOV	A,M
+0012   0006 23          	INX	H
+0013   0007 96          	SUB	M
+0014   0008 23          	INX	H
+0015   0009 D2 0F 00    	JNC	HERE
+0016   000C 2F          	CMA			; take 2's complement of
+0017   000D 3C          	INR	A		; result if borrow exists
+0018   000E 0C          	INR	C
+0019   000F 77          HERE:	MOV	M,A
+0020   0010 23          	INX	H
+0021   0011 71          	MOV	M,C
+0022   0012 76          	HLT
+Number of errors = 0

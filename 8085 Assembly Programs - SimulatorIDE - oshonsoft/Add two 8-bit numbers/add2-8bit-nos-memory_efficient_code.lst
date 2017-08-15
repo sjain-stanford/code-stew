@@ -1,0 +1,20 @@
+0001   0000             ; Program occupies only 0000H - 0010H in the memory
+0002   0000             ; Does not use LDA, STA (3-byte instructions)
+0003   0000             ; Uses increment of register pair technique for different addresses (INX, INR are 1-byte instructions)
+0004   0000             
+0005   0000             
+0006   0000             
+0007   0000             	.ORG	0000H
+0008   0000 0E 00       START:	MVI	C,00H		; represent carry
+0009   0002 21 50 00    	LXI	H,0050H
+0010   0005 7E          	MOV	A,M
+0011   0006 23          	INX	H
+0012   0007 86          	ADD	M
+0013   0008 23          	INX	H
+0014   0009 77          	MOV	M,A
+0015   000A D2 0E 00    	JNC	HERE
+0016   000D 0C          	INR	C
+0017   000E 23          HERE:	INX	H
+0018   000F 71          	MOV	M,C
+0019   0010 76          	HLT
+Number of errors = 0

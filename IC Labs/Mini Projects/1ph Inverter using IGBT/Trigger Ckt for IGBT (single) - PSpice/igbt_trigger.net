@@ -1,0 +1,34 @@
+* Schematics Netlist *
+
+
+
+C_C3         V_astable $N_0001  0.001u  
+D_D3         $N_0001 $N_0002 D1N4002 
+Q_Q1         Vint $N_0003 $N_0004 Q2N2222
+R_R7         $N_0003 V_mono  4.7k  
+V_V1         $N_0002 0 5V
+C_C4         0 $N_0005  0.01u  
+C_C12         0 $N_0006  0.01u  
+X_X2         0 $N_0001 V_mono $N_0002 $N_0006 $N_0007 $N_0007 $N_0002 555D
++  PARAMS: MAXFREQ=3E6
+C_C5         0 $N_0007  0.01u  
+C_C2         0 Vc2  0.1u  
+X_X1         0 Vc2 V_astable $N_0002 $N_0005 Vc2 $N_0008 $N_0002 555D PARAMS:
++  MAXFREQ=3E6
+X_U3         0 $N_0004 $N_0009 $N_0010 Vint uA741
+V_V7         0 $N_0010 12V
+V_V8         $N_0013 0 8V
+V_V9         $N_0009 0 12V
+R_R9         $N_0014 Vint  10k  
+R_R4         $N_0001 $N_0002  25k  
+X_U4         $N_0014 V_contr $N_0009 $N_0010 Vcomp uA741
+D_D16         Vcomp voutF D1N4002 
+R_R28         0 voutF  1k  
+R_R2         Vc2 $N_0008  1k  
+R_R12         0 $N_0017  .1k  
+RT_R15         $N_0017 V_contr {(10K*(1-0.75))+.001}
+RB_R15        V_contr $N_0013 {(10K*0.75)+.001}
+C_C13         $N_0004 Vint  0.033u  
+R_R10         $N_0010 $N_0004  21k  
+R_R16         $N_0008 $N_0002 {6.5k*0.5+.001}
+R_R5         $N_0007 $N_0002  9k  

@@ -1,0 +1,9 @@
+
+LOCNa line 10
+LOCNb line 11
+data1 12H
+data2 24H
+data3 56H
+A 22
+B 23
+C 24

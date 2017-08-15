@@ -1,0 +1,30 @@
+Ex-5.2 Zbus building algorithm
+ - Sambhav R Jain (107108103)
+
+Enter the number of buses in the existing power system: 3
+Enter the z(1,1): 0.42
+Enter the z(1,2): 0.28
+Enter the z(1,3): 0.38
+Enter the z(2,2): 0.52
+Enter the z(2,3): 0.26
+Enter the z(3,3): 0.53
+
+The Zbus matrix is: 
+
+Zold =
+
+        0 + 0.4200i        0 + 0.2800i        0 + 0.3800i
+        0 + 0.2800i        0 + 0.5200i        0 + 0.2600i
+        0 + 0.3800i        0 + 0.2600i        0 + 0.5300i
+
+Enter the bus subscript "j" where the new branch is to be added: 2
+Enter the bus subscript "k" where the new branch is to be added: 3
+Enter the impedance to be added between bus 2 and 3: 0.4
+
+The new Zbus matrix is: 
+
+Znew =
+
+        0 + 0.4092i        0 + 0.3080i        0 + 0.3510i
+        0 + 0.3080i        0 + 0.4473i        0 + 0.3355i
+        0 + 0.3510i        0 + 0.3355i        0 + 0.4516i

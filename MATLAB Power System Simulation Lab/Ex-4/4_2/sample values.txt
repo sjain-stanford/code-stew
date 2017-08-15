@@ -1,0 +1,48 @@
+Program to calculate the inductance of a single-phase transmission line
+
+Enter the no of sub-conductors in phase A: 4
+Enter the no of sub-conductors in phase B: 4
+**** Enter specifics of phase A sub-conductors ****
+Phase A: D11: 3.2252e-3
+Phase A: D12: 0.3
+Phase A: D13: 0.4
+Phase A: D14: 0.5
+Phase A: D22: 3.2252e-3
+Phase A: D23: 0.5
+Phase A: D24: 0.4
+Phase A: D33: 3.2252e-3
+Phase A: D34: 0.3
+Phase A: D44: 3.2252e-3
+**** Enter specifics of phase B sub-conductors ****
+Phase B: D11: 3.2252e-3
+Phase B: D12: 0.3
+Phase B: D13: 0.4
+Phase B: D14: 0.5
+Phase B: D22: 3.2252e-3
+Phase B: D23: .5
+Phase B: D24: .4
+Phase B: D33: 3.2252e-3
+Phase B: D34: 0.3
+Phase B: D44: 3.2252e-3
+**** Enter mutual distances ****
+Mutual: M11: 2.3
+Mutual: M12: 2.6
+Mutual: M13: 2.334523
+Mutual: M14: 2.630589
+Mutual: M21: 2
+Mutual: M22: 2.3
+Mutual: M23: 2.0396
+Mutual: M24: 2.334523
+Mutual: M31: 2.334523
+Mutual: M32: 2.630589
+Mutual: M33: 2.3
+Mutual: M34: 2.6
+Mutual: M41: 2.0396
+Mutual: M42: 2.334523
+Mutual: M43: 2
+Mutual: M44: 2.3
+Loop Inductance (mH/km): 
+
+Lnew =
+
+    1.1895

@@ -1,0 +1,74 @@
+0001   0000             ; nibble addition : max when 9+9 = 12
+0002   0000             ; D --> final carry of BCD sum
+0003   0000             ; E --> (auxiliary carry) set to 1 when addition of lower nibble is greater than 9 (i.e. A to F and even if carried over, e.g. 10 to 12 --> max is 9+9 = 12))
+0004   0000             ; B --> sum of two numbers (normal hex form)
+0005   0000             ; If CY = 1 && E = 1, then add 66h to B to get BCD result
+0006   0000             ; If CY = 1 && E = 0, then add 60h to B
+0007   0000             ; If CY = 0, and
+0008   0000             ;		i)if lower Nibble > 9, add 06h to B, then
+0009   0000             ;		ii)if higher Nibble > 9, add 60h to B
+0010   0000             
+0011   0000             	.ORG	0000H
+0012   0000             
+0013   0000             ; To check for CY and E
+0014   0000 16 00       	MVI	D,00H
+0015   0002 1E 00       	MVI	E,00H
+0016   0004 21 A0 00    	LXI	H,00A0H
+0017   0007 7E          	MOV	A,M
+0018   0008 E6 0F       	ANI	0FH
+0019   000A 4F          	MOV	C,A
+0020   000B 23          	INX	H
+0021   000C 7E          	MOV	A,M
+0022   000D E6 0F       	ANI	0FH
+0023   000F 81          	ADD	C
+0024   0010 FE 0A       	CPI	0AH	; If Acc >= 0AH, carry is reset
+0025   0012 DA 16 00    	JC	L1
+0026   0015 1C          	INR	E
+0027   0016 7E          L1:	MOV	A,M
+0028   0017 2B          	DCX	H
+0029   0018 86          	ADD	M
+0030   0019 47          	MOV	B,A
+0031   001A D2 31 00    	JNC	L2	; CY = 0 cases are handled after L2
+0032   001D             
+0033   001D             ; CY = 1 cases are handled below
+0034   001D 14          	INR	D
+0035   001E 7B          	MOV	A,E
+0036   001F 3D          	DCR	A
+0037   0020 C2 2A 00    	JNZ	L4
+0038   0023             ; if after decrementing, A == 0, then it means that initially E = 1 (auxiliary carry was set)
+0039   0023             ; if after decrementing, A != 0, then initially, E = 0 (no auxiliary carry)
+0040   0023 78          	MOV	A,B
+0041   0024 C6 66       	ADI	66H	; case: CY = 1 && E = 1
+0042   0026 47          	MOV	B,A
+0043   0027 C3 4E 00    	JMP	L3
+0044   002A 78          L4:	MOV	A,B
+0045   002B C6 60       	ADI	060H	; case: CY = 1 && E = 0
+0046   002D 47          	MOV	B,A
+0047   002E C3 4E 00    	JMP	L3
+0048   0031             
+0049   0031             ; case: CY = 0
+0050   0031 7B          L2:	MOV	A,E
+0051   0032 3D          	DCR	A
+0052   0033 C2 3E 00    	JNZ	L5	; case: (lower nibble of B) < 9
+0053   0036 78          	MOV	A,B
+0054   0037 C6 06       	ADI	06H	; case: (lower nibble of B) > 9
+0055   0039 D2 3D 00    	JNC	NC1
+0056   003C 14          	INR	D
+0057   003D 47          NC1:	MOV	B,A
+0058   003E 78          L5:	MOV	A,B
+0059   003F E6 F0       	ANI	0F0H
+0060   0041 FE A0       	CPI	0A0H
+0061   0043 DA 4E 00    	JC	L3	; case: higher nibble < 9
+0062   0046 78          	MOV	A,B
+0063   0047 C6 60       	ADI	060H	; case: higher nibble > 9
+0064   0049 D2 4D 00    	JNC	NC2
+0065   004C 14          	INR	D
+0066   004D 47          NC2:	MOV	B,A
+0067   004E 23          L3:	INX	H
+0068   004F 23          	INX	H
+0069   0050 70          	MOV	M,B	; store bcd sum
+0070   0051 23          	INX	H
+0071   0052 72          	MOV	M,D	; store carry
+0072   0053 76          	HLT
+0073   0054             
+Number of errors = 0

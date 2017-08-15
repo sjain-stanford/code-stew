@@ -1,0 +1,10 @@
+0001   0000             	.ORG	8200H
+0002   8200             PORT1	.EQU	01H
+0003   8200 3A 40 82    START:	LDA	8240H
+0004   8203 21 41 82    	LXI	H,8241H
+0005   8206 86          	ADD	M
+0006   8207 D3 01       	OUT	PORT1
+0007   8209 32 50 82    	STA	8250H
+0008   820C 76          	HLT
+0009   820D             	.END
+Number of errors = 0

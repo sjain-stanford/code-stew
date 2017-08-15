@@ -1,0 +1,22 @@
+0001   0000             ; 0050H should contain lower order byte of 1st no
+0002   0000             ; 0051H should contain higher order byte of 1st no
+0003   0000             ; 0052H should contain lower order byte of 2nd no
+0004   0000             ; 0053H should contain higher order byte of 2nd no
+0005   0000             ; lower order byte of result is stored in 0054H followed
+0006   0000             ; by the higher order byte in 0055H
+0007   0000             ; carry is stored in 0056H
+0008   0000             
+0009   0000             
+0010   0000             
+0011   0000             	.ORG	0000H
+0012   0000 3E 00       START:	MVI	A,00H
+0013   0002 2A 50 00    	LHLD	0050H
+0014   0005 EB          	XCHG
+0015   0006 2A 52 00    	LHLD	0052H
+0016   0009 19          	DAD	D
+0017   000A 22 54 00    	SHLD	0054H
+0018   000D D2 11 00    	JNC	HERE
+0019   0010 3C          	INR	A
+0020   0011 32 56 00    HERE:	STA	0056H
+0021   0014 76          	HLT
+Number of errors = 0

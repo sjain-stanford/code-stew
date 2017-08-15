@@ -1,0 +1,24 @@
+* D:\sem vi\folders\IGBT_MINI Pro\igbt_trigger.sch
+
+* Schematics Version 9.1 - Web Update 1
+* Sat Feb 12 14:11:31 2011
+
+
+
+** Analysis setup **
+.tran 20ns 10ms SKIPBP
+.OP 
+.STMLIB "igbt_trigger.stl"
+
+
+* From [PSPICE NETLIST] section of pspiceev.ini:
+.lib "nom.lib"
+
+.INC "igbt_trigger.net"
+.INC "igbt_trigger.als"
+
+
+.probe
+
+
+.END

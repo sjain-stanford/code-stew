@@ -1,0 +1,10 @@
+SYMBOL         VALUE/ADDRESS  	REFERENCED at 
+
+data1          12H            	1000
+LOCNa          1014           	1003
+data3          56H            	1006,1014
+data2          24H            	1008,100e
+LOCNb          1017           	100b,1010
+A              22             	100f
+C              24             	1013
+B              23             	1017

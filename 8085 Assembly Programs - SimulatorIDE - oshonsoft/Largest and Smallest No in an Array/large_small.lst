@@ -1,0 +1,33 @@
+0001   0000             	.ORG	0000H
+0002   0000 21 50 00    	LXI	H,0050H
+0003   0003 4E          	MOV	C,M	; C - no. of elements in the array
+0004   0004 23          	INX	H
+0005   0005 56          	MOV	D,M	; D - MAX no.
+0006   0006 5E          	MOV	E,M	; E - MIN no.
+0007   0007 23          	INX	H
+0008   0008 0D          	DCR	C
+0009   0009             
+0010   0009             ; Segment to get Largest of the numbers
+0011   0009 7A          LOOP:	MOV	A,D
+0012   000A BE          	CMP	M
+0013   000B D2 0F 00    	JNC	L1
+0014   000E 56          	MOV	D,M
+0015   000F             
+0016   000F             ; Segment to get Smallest of the numbers
+0017   000F 7B          L1:	MOV	A,E
+0018   0010 BE          	CMP	M
+0019   0011 DA 15 00    	JC	L2
+0020   0014 5E          	MOV	E,M
+0021   0015             
+0022   0015             ; Next Iteration
+0023   0015 23          L2:	INX	H
+0024   0016 0D          	DCR	C
+0025   0017 C2 09 00    	JNZ	LOOP
+0026   001A             
+0027   001A             ; Store Largest and Smallest of numbers to memory
+0028   001A 7A          	MOV	A,D
+0029   001B 32 A0 00    	STA	00A0H
+0030   001E 7B          	MOV	A,E
+0031   001F 32 A1 00    	STA	00A1H
+0032   0022 76          	HLT
+Number of errors = 0

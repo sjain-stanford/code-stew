@@ -1,0 +1,441 @@
+/*
+Theme Name: Circuits Today
+Theme URI: circuitstoday.com
+Description: Wordpress
+Version: 1.0
+Author: Jose
+Author URI: circuitstoday.com
+*/
+
+body{ margin:0; padding:0; font-family:Arial, Helvetica, sans-serif; font-size:12px; background: #ececec url(images/ctbg.png) repeat-x center top; color:#000;}
+
+/*default items*/
+
+h1{font-size:32px;}
+h2{font-size:28px;}
+h3{font-size:20px;}
+h4{font-size:18px;}
+h5{font-size:14px;}
+h6{font-size:11px;}
+h1, h2, h3, h4, h5, h6{font-family:"Trebuchet MS",Verdana,Arial,Helvetica,sans-serif;}
+h1 a:hover,h2 a:hover,h3 a:hover,h4 a:hover,h5 a:hover,h6 a:hover{text-decoration:none;border:none;}
+a:link,a:visited{text-decoration:none;color:#045b7e;}
+a:hover {text-decoration:none
+	color:#41dad6;
+		}
+
+#contentleft .entry a{text-decoration:underline;}
+
+img a:link, a img {
+	border:0;
+	margin: 0 0;
+	}
+
+blockquote {
+	padding-left:20px;
+	color:#333;
+		
+	}
+.clear, .clearfix {
+	clear:both;
+	}
+
+.aligncenter {
+	display: block;margin-left: auto;margin-right: auto;
+		margin-bottom: 10px;
+	}
+
+.alignright {
+	float: right;
+	margin: 10px 10px 10px 10px;
+	}
+
+.alignleft {
+	float: left;
+	margin: 10px 10px 10px 10px;
+	}
+
+img.centered  {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 10px;
+	padding: 0px;
+background:#ececec;
+		border: 1px solid #ccc;
+	}
+	
+img.alignnone {
+	padding: 5px 5px;
+	margin: 10px 10px 10px 10px;
+	display: inline;
+background:#ececec;
+		border: 1px solid #ccc;
+	}
+
+img.alignright {
+	padding: 5px 5px;
+	margin: 10px 10px 0px 10px;
+	display: inline;
+background:#ececec;
+		border: 1px solid #ccc;
+
+	}
+
+img.alignleft {
+	padding: 5px 5px;
+	margin: 10px 10px 10px 0px;
+	display: inline;
+background:#ececec;
+		border: 1px solid #ccc;
+
+	}
+.entry img{padding: 5px 5px;
+	margin: 10px 10px 10px 0px;
+        background:#ececec;
+		border: 1px solid #ccc;}
+.entry ul{list-style:square}	
+
+	
+.wp-caption {max-width:625px;
+	border: 1px solid #ccc;
+	text-align: center;
+	background-color: #ececec;
+	padding: 4px 0px 5px 0px;
+	}
+
+.wp-caption img {
+	margin: 0px 0px 5px 0px;
+	padding: 0px;
+	border: 0px;
+	
+	}
+
+.wp-caption p.wp-caption-text {
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	font-size: 11px;
+	font-weight: normal;
+	line-height: 130%;
+	}
+
+.entry p{font-family: Georgia, "Times New Roman", Times, serif; line-height: 125%;}
+
+h1, h2, h3, h4{font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;}
+
+h1{margin:0; padding:10px;font-size:32px; }
+h2{margin:0; padding:10px;font-size:24px;}
+h3{margin:0; padding:10px;font-size:16px;}
+h4{margin:0; padding:10px;font-size:12px;}
+/* styles */
+
+#container{width:1000px; margin:0 auto; padding:0;}
+#header{height:150px;border-bottom:1px solid #ddd;}
+#logo{float:left;width:249px;}
+#contentleft{ float:left; width:670px; margin:0; padding:0; }
+#sidebar{ float:right; width:320px;  margin:0; padding:0;}
+#sidebar1{width:50%; float:left;}
+#sidebar2{width:50%; float:right;}
+/*#sidebar1 ul{ list-style:none; margin:0; padding:0;}
+#sidebar1 li{ list-style:none; margin:0; padding:0;background: url(images/ssb.png) repeat-y center center;}
+#sidebar1 ul ul{margin:0px 0px;padding:0px 0px 10px 0px;background: url(images/ssbbot.png) no-repeat bottom center;}
+#sidebar1 ul h2{font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color:#045b7e;margin:0px 0px; padding:10px 10px 10px 10px;background: url(images/ssbtop.png) no-repeat top center;}
+
+#sidebar1 ul ul ul{margin:0; padding:0;background:none;}
+#sidebar1 li li{background:none; margin: 2px 10px;}
+#sidebar1 li li li{ margin: 2px 0px; }
+#sidebar1 li li a{color:#045b7e;font-weight:bold;line-height:20px;border-bottom:1px solid #e3e3e3; display:block;padding:0px 5px;}
+
+#sidebar2 ul{ list-style:none; margin:0; padding:0;}
+#sidebar2 li{ list-style:none; margin:0; padding:0;background: url(images/ssb.png) repeat-y center top;}
+#sidebar2 ul ul{margin:0px 0px; padding:0px 0px 10px 0px;background: url(images/ssbbot.png) no-repeat bottom center;}
+#sidebar2 ul h2{font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color:#045b7e;margin:0px 0px; padding:10px 10px 10px 10px;background: url(images/ssbtop.png) no-repeat top center;}
+
+#sidebar2 ul ul ul{margin:0; padding:0;background:none;}
+#sidebar2 li li{background:none; margin: 0px 10px; background:#fff;}
+#sidebar2 li li li{ margin: 0px; }
+#sidebar2 li li a{color:#045b7e;font-weight:bold;border-bottom:1px solid #e3e3e3;line-height:20px;border-bottom:1px solid #e3e3e3; display:block;padding:0px 0px;margin:0px 5px;}
+*/
+
+
+#sidebar ul{margin:0; padding:0;}
+#sidebar li{ list-style:none; margin:0px 0px; padding:0;}
+#sidebar ul ul{margin:0px 0px 0px 0px;padding:10px 0px 10px 0px;border:1px solid #ddd;background:#fff url(images/grad1.png) repeat-x top; }
+#sidebar h2{font-size:16px;font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;color:#045b7e;margin:0px 0px; padding:10px 10px 5px 10px;}
+#sidebar ul ul ul{margin:0; padding:0;background:none;border:0;}
+#sidebar li li{background:none;color:#045b7e; margin: 0px 10px;border-bottom:1px solid #e3e3e3;}
+#sidebar li li li{color:#045b7e;margin:0; padding:0;border-top:1px solid #e3e3e3; border-bottom:0px;}
+#sidebar li li a{color:#045b7e;line-height:20px; padding:0px 0px;font-weight:bold;}
+#sidebar a:hover {
+	color:#41dad6;}
+#searchbox{width:320px; margin: 10px 0px; height:85px;}
+#searchbox form{text-align:center;}
+.box{border:1px solid #ddd;background:#fff url(images/grad1.png) repeat-x top;}
+
+#socialicons{float:left; height:63px; width:700px;}
+
+#socialicons span{float:right;display:block; width:52px; height:51px;  padding:0; margin:5px;}
+#socialicons .f1:hover{background: url(images/social2.png) -1px -1px;}
+#socialicons .f2:hover{background: url(images/social2.png) -53px -1px;;}
+#socialicons .f3:hover{background: url(images/social2.png) -105px -1px;}
+#socialicons .f4:hover{background: url(images/social2.png) -157px -1px;}
+#socialicons .f1{background: url(images/social2.png) -1px -59px;}
+#socialicons .f2{background: url(images/social2.png) -53px -59px;;}
+#socialicons .f3{background: url(images/social2.png) -105px -59px;}
+#socialicons .f4{background: url(images/social2.png) -157px -59px;}
+.menu-bar{padding-top:0px;float:right}
+
+.menu-bar ul{list-style:none;margin:0; padding:0;}
+.menu-bar li{text-align:center;margin:0; padding:0px 0px 0px 0px;float:left; /*background:url(images/navr.png) no-repeat right top;*/border-right: 1px solid #278eb9}
+.menu-bar li a:hover{color:#ececec;}
+
+.menu-bar li a{color:#fff;
+font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+font-size:20px; padding:0px 18px 0px 18px;
+line-height:55px;display:block;
+text-align:center;
+text-decoration:none;border-right: 1px solid #035c7f
+}
+.menu-bar li a span{color:#ececec;
+font-family:"Lucida Grande",Helvetica,Arial,sans-serif;
+font-size:12px;
+line-height:16px;
+text-align:center;}
+
+
+.post-arena{border:1px solid #ccc;background:#fff url(images/grad1.png) repeat-x top;padding-top:15px; border:1px solid #ddd;margin:10px; }
+.post{padding:10px;}
+.post-arena h2 {padding:5px 10px; borser-bottom:1px solid #ececec;}
+.post-arena h2 a{font-size:34px;color:#045b7e;}
+
+.entry p{padding:10px 10px; font-size:13px; color:#333; line-height:130%;}
+
+
+
+.comments-arena{margin:10px; }
+.comments-arena a{color:#333; }	
+h3#comments {font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	border:1px solid #ddd;background:#fff url(images/grad1.png) repeat-x top; padding:10px; font-size: 16px; color:#127674
+	} 	
+	
+
+#commentform input {
+	background:#fff;
+	border:2px solid #ddd;
+	color:#666;
+	padding:2px 0px 2px 5px;;
+
+	}
+#commentform textarea {width:500px;
+	background:#fff;
+	border:2px solid #ddd;
+	padding:5px;
+
+	}
+.comments input#submit {
+	}
+
+	
+ol.commentlist { margin:0;padding:0;
+	list-style:none; 
+	}
+
+
+ol.commentlist li{position:relative; margin:6px 0px; padding:0px 0px 0px 0px;width:650px;}
+.commentlist .comment-body{border:1px solid #ddd; background:#fff url(images/grad1.png) repeat-x top; margin: 0px 0px 0px 80px; padding:20px 5px 5px 5px; min-height:62px;}
+
+.comment-meta {position:absolute; left:80px; top:6px; font-size:11px;padding:0px 15px;}
+.comment-author{position:absolute; 
+/*background:#fff url(images/grad1.png) repeat-x top;*/
+left:0px;
+margin:0;
+position:absolute;
+top:0;border:1px solid #ddd;
+width:70px;
+}
+.comment-author span.says{display:none;}
+.comment-author .avatar{position:absolute; top:0px; left:0px;padding:5px;margin:0px 0px;/*border: 1px solid #ddd;border-bottom:0px; */}
+
+.commentlist li div.vcard cite.fn { 
+	font-style:normal;width:70px;padding:70px 0px 2px 0px;
+		text-align:center;
+	background:#fff url(images/grad1.png) repeat-x top;
+color:#118280; font-size:11px; text-transform:uppercase;
+		margin:0px 0px;
+/*position: absolute;top:70px;left:0px;*/ float:left;
+
+}
+
+
+#content .comment-author-admin div.vcard cite.fn{background:#118280; color:#fff;}
+#content .comment-author-admin .avatar{background:#118280; color:#fff;}
+
+
+.commentlist li div.vcard cite.fn a{color:#118280;}
+ol.commentlist li ul.children { 
+	list-style:none; 
+	margin:1em 0 0; 
+	text-indent:0; 
+}
+
+ol.commentlist li ul.children li.depth-2 { 
+	margin:0 0 0px 90px; 
+}
+
+ol.commentlist li ul.children li.depth-3 { 
+	margin:0 0 0px 90px; 
+}
+
+ol.commentlist li ul.children li.depth-4 {
+	margin:0 0 0px 90px; 
+
+ }
+#respond{	
+	padding:10px;
+	margin:5px 0px;
+	border:1px solid #ddd;background:#fff url(images/grad1.png) repeat-x top; padding:10px; font-size: 16px;
+
+}	
+#respond h3{font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	padding:5px 0px;
+	margin:0px;
+	font-size:22px;
+	font-weight:normal;
+	color:#127674
+
+	}
+#commentform {
+	padding:5px;margin:0;	
+	}
+.cancel-comment-reply{
+	margin:3px;	padding:10px;
+}	
+
+
+.postmetabottom{border:1px solid #ececec; padding:10px; margin:10px 0px 0px;background: #fcfcfc; font-size:11px; text-transform: uppercase;}
+.postmetatop{border:1px solid #ececec; padding:0px 10px; margin:10px 0px;background:  #fcfcfc; font-size:11px; text-transform: uppercase; }
+.postmetatop .comm{float:right; padding: 10px 0px 10px 30px; background: url(images/comm.png) no-repeat left center; }
+.postmetatop .date{float:left; padding: 10px 0px 10px 30px; margin:0px 0px 0px 30px;background: url(images/date.png) no-repeat left center; }
+.postmetatop .auth{ float:left;padding: 10px 0px 10px 20px; background: url(images/auth.png) no-repeat left center; }
+
+.postmetabottom .p-cat{float:left; width:300px;}
+.postmetabottom .p-tag{float:right; width:300px;text-align:right}
+
+#bottom{background:#fcfcfc; margin:0; padding:0;color:#127674;min-width:1000px; border-top:1px solid #ddd;}
+#bottom a{color:#127674;}
+
+#bottom-content{width:1000px; margin:0 auto; }
+
+
+#bottomleft{width:300px; float:left; margin:10px; }
+#bottomcen{width:600px; float:left; margin:10px 10px 10px 30px; }
+#bottomright{width:300px; float:right; margin:10px; }
+
+
+#bottom ul {margin:0px 0px 0px 5px;padding:10px 0px 10px 0px;list-style:none;}
+#bottom h2{font-family: "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;margin:0px 0px; padding:10px 10px 5px 10px;}
+#bottom ul ul {margin:0; padding:0;background:none;border:0;list-style:none;}
+#bottom li {margin: 0px 0px;border-bottom:1px solid #e3e3e3;}
+#bottom li li{margin:0; padding:0;border-top:1px solid #e3e3e3; border-bottom:0px;}
+#bottom li a{line-height:20px; padding:0px 0px;font-weight:bold;}
+
+.recp{height:50px; border-bottom:1px solid #ccc;}
+.recp img{float:right; background:#fff; border:0px solid #fff;height:40px; width:60px;margin:5px;}
+.recp h3{float:left;font-size: 14px;}
+
+
+.recp2{ border-bottom:1px solid #ececec;float:left;
+min-height:50px;
+width:100%;}
+
+#recentposts{padding:10px;margin:10px 0px;}
+#recentposts .recp2 img{float:left; background:#fff; border:0px solid #fff;height:40px; width:60px;margin:5px; border: 3px solid #ccc;}
+#recentposts .recp2 h3{float:left;font-size: 15px;padding:0; margin:0; width:220px;}
+
+
+
+/*****************************************************************************/
+
+#carousel {  
+    padding:10px;
+     position:relative;  
+}  
+  
+#slides {  margin:0 auto;  
+    overflow:hidden;  
+    /* fix ie overflow issue */  
+    position:relative;  
+    width:450px;  
+    height:50px;  
+  
+}  
+  
+/* remove the list styles, width : item width * total items */    
+#slides ul {  
+    position:relative;  
+    left:0;  
+    top:0;  
+    list-style:none;  
+    margin:0;  
+    padding:0;    
+    width:1650px;              
+}  
+  
+/* width of the item, in this case I put 250x250x gif */  
+#slides li {  background:url(images/tested.png) no-repeat 350px 0px;
+    width:550px;  
+    height:50px;     
+    float:left;  
+}  
+  #slides li h3{}
+#slides li img {  
+    padding:5px;  
+}  
+  
+/* Styling for prev and next buttons */  
+#buttons {  
+    padding:0 0 5px 0;    
+    float:right;  
+}  
+  
+#buttons a {  z-index:999;
+    display:block;  position:absolute; 
+    width:31px;   
+    height:32px;  
+    text-indent:-999em;  
+     outline:0;  
+}  
+  
+a#prev {  left:60px; top:20px;
+    background:url(arrow.png) 0 -31px no-repeat;   
+}  
+  
+a#prev:hover {  
+    background:url(arrow.png) 0 0 no-repeat;  
+}  
+  
+a#next {   right:60px; top:20px;
+    background:url(arrow.png) -32px -31px no-repeat;   
+}  
+  
+a#next:hover {  
+    background:url(arrow.png) -32px 0 no-repeat;  
+}  
+  
+.clear {clear:both}
+#sub-button{margin-left:3px;}
+
+#navigation{font-weight:bold; font-size:14px;}
+.entry img{
+max-width: 600px; 
+}
+
+.readers{width:100%; text-align:center;}
+
+.header-bottom{float:right; width:740px; margin-top:10px;}
+
+.related a{font-weight:bold;}
+
+.searchfm{margin:10px; float:left; width:290px; }
+ul#recentcomments{margin:0;}
+#bottomcen a:hover{background:#127674; color:#fff;}

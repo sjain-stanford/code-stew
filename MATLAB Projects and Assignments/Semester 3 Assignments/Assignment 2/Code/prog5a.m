@@ -1,0 +1,23 @@
+% Balanced Y-Y positive system
+clear all;
+close all;
+clc;
+disp('Please enter the value of phase voltage(reference):');
+Van=input('');
+Vbn=(Van*cos(deg2rad(-120))+i*Van*sin(deg2rad(-120)));
+Vcn=(Van*cos(deg2rad(-240))+i*Van*sin(deg2rad(-240)));
+disp('Plase enter the transmission line impedance:');
+Zt=input('');
+disp('Please enter the load impedance:');
+Zl=input('');
+Z=[(Zt+Zl) (-Zt-Zl) 0;0 (Zt+Zl) (-Zt-Zl);1 1 1];
+V=[(Van-Vbn);(Vbn-Vcn);0];
+I=inv(Z)*V;
+disp('The respective line currents are:');
+disp(I);
+pf=real(Zt+Zl)/sqrt((real(Zt+Zl))^2+(imag(Zt+Zl))^2);
+disp('The power factor of the load is:');
+disp(pf);
+P=sqrt(3)*Van*(sqrt((real(I(1)))^2+(imag(I(1)))^2))*pf;
+disp('The total power(in Watts) supplied to the load is:');
+disp(P);

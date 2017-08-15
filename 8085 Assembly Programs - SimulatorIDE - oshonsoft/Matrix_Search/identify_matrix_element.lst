@@ -1,0 +1,33 @@
+0001   0000             ; This program searches a 3x3 Matrix (stored in a row-major order)
+0002   0000             ; for a number (76)H. When it finds it, it stores the row and column
+0003   0000             ; details in (00A0)H and (00A1)H. If 76 does not exist in the matrix,
+0004   0000             ; then it stores 0,0 as the row and column.
+0005   0000             
+0006   0000             ; Store the 9 elements of the matrix in (0050 - 0055)H
+0007   0000 06 00       START:	MVI	B,00H	; row
+0008   0002 0E 00       	MVI	C,00H	; column
+0009   0004 21 50 00    	LXI	H,0050H
+0010   0007 1E 09       	MVI	E,09H
+0011   0009 16 03       L2:	MVI	D,03H
+0012   000B 04          	INR	B
+0013   000C 7E          L3:	MOV	A,M
+0014   000D FE 76       	CPI	76H
+0015   000F CA 1E 00    	JZ	L1	; if Zero is Set, then 76 is present
+0016   0012 23          	INX	H
+0017   0013 1D          	DCR	E
+0018   0014 CA 2A 00    	JZ	L4
+0019   0017 15          	DCR	D
+0020   0018 C2 0C 00    	JNZ	L3
+0021   001B C3 09 00    	JMP	L2
+0022   001E 78          L1:	MOV	A,B
+0023   001F 32 A0 00    	STA	00A0H
+0024   0022 3E 03       	MVI	A,03H
+0025   0024 92          	SUB	D
+0026   0025 3C          	INR	A
+0027   0026 32 A1 00    	STA	00A1H
+0028   0029 76          	HLT
+0029   002A 3E 00       L4:	MVI	A,00H
+0030   002C 32 A0 00    	STA	00A0H
+0031   002F 32 A1 00    	STA	00A1H
+0032   0032 76          	HLT
+Number of errors = 0

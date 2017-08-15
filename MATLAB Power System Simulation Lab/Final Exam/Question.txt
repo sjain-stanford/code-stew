@@ -1,0 +1,4 @@
+1. Write an m-code to calculate the Inductance and Capacitance of a single circuit three-phase transmission line for
+the case of symmetrical and unsymmetrical spacing.
+
+2. Construct a single phase SPWM based dc-ac converter in Simulink for an R-L load. 

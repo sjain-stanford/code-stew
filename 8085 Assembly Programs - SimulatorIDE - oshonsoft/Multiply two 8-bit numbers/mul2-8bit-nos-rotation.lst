@@ -1,0 +1,16 @@
+0001   0000 21 40 00    START:	LXI	H,0040H
+0002   0003 5E          	MOV	E,M
+0003   0004 16 00       	MVI	D,00H
+0004   0006 23          	INX	H
+0005   0007 7E          	MOV	A,M
+0006   0008 21 00 00    	LXI	H,0000H
+0007   000B 06 08       	MVI	B,08H
+0008   000D 29          MULT:	DAD	H
+0009   000E 17          	RAL
+0010   000F D2 13 00    	JNC	SKIP
+0011   0012 19          	DAD	D
+0012   0013 05          SKIP:	DCR	B
+0013   0014 C2 0D 00    	JNZ	MULT
+0014   0017 22 50 00    	SHLD	0050H
+0015   001A 76          	HLT
+Number of errors = 0

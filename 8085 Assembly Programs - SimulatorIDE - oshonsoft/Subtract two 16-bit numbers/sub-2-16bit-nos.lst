@@ -1,0 +1,24 @@
+0001   0000             	.ORG	0000H
+0002   0000 21 50 00    START:	LXI	H,0050H
+0003   0003 0E 00       	MVI	C,00H	; borrow to the 16th bit
+0004   0005 46          	MOV	B,M	; higher-order bits of 1st no.
+0005   0006 23          	INX	H
+0006   0007 7E          	MOV	A,M	; lower-order bits of 1st no.
+0007   0008 23          	INX	H
+0008   0009 56          	MOV	D,M	; higher-order bits of 2nd no.
+0009   000A 23          	INX	H
+0010   000B 5E          	MOV	E,M	; lower-order bits of 2nd no.
+0011   000C 93          	SUB	E
+0012   000D 23          	INX	H	; store the lower-order bits of the result first
+0013   000E 77          	MOV	M,A
+0014   000F 78          	MOV	A,B
+0015   0010 9A          	SBB	D
+0016   0011 23          	INX	H	; store the higher-order bits of the result next
+0017   0012 77          	MOV	M,A
+0018   0013 D2 17 00    	JNC	L1
+0019   0016 0C          	INR	C
+0020   0017 23          L1:	INX	H	; finally store the carry
+0021   0018 71          	MOV	M,C
+0022   0019 76          	HLT
+0023   001A             
+Number of errors = 0

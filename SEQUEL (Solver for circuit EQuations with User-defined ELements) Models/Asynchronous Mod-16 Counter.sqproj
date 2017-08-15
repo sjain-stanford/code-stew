@@ -1,0 +1,332 @@
+<!DOCTYPE SequelGUIProject>
+<SequelGUIProject>
+  <ProjectPart Title="" ID="SequelCircuit">
+    <!--Circuit Element Information-->
+    <CircuitElement X="-290.00" Y="-140.00" ID="35" ElementType="dsrc1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="one"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="i0" Value="1" Index="1"/>
+    </CircuitElement>
+    <CircuitElement X="-290.00" Y="-110.00" ID="36" ElementType="dsrc1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="zero"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="i0" Value="0" Index="1"/>
+    </CircuitElement>
+    <CircuitElement X="-270.00" Y="-50.00" ID="37" ElementType="clock.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="clock"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="i0" Value="0" Index="1"/>
+      <EProperty Type="QString" Name="t1" Value="30u" Index="2"/>
+      <EProperty Type="QString" Name="t2" Value="30u" Index="3"/>
+      <EProperty Type="QString" Name="t0" Value="0" Index="4"/>
+    </CircuitElement>
+    <CircuitElement X="-170.00" Y="-60.00" ID="38" ElementType="jkff1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="ff1"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="qbar" Value="q0bar" Index="6"/>
+      <EProperty Type="QString" Name="state_sv" Value="0" Index="7"/>
+      <EProperty Type="QString" Name="q_sv" Value="0" Index="8"/>
+      <EProperty Type="QString" Name="dlyhl" Value="5n" Index="9"/>
+      <EProperty Type="QString" Name="dlylh" Value="5n" Index="10"/>
+    </CircuitElement>
+    <CircuitElement X="-20.00" Y="-60.00" ID="39" ElementType="jkff1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="dce_jkff1$5"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="qbar" Value="q1bar" Index="6"/>
+      <EProperty Type="QString" Name="state_sv" Value="0" Index="7"/>
+      <EProperty Type="QString" Name="q_sv" Value="0" Index="8"/>
+      <EProperty Type="QString" Name="dlyhl" Value="5n" Index="9"/>
+      <EProperty Type="QString" Name="dlylh" Value="5n" Index="10"/>
+    </CircuitElement>
+    <CircuitElement X="140.00" Y="-60.00" ID="40" ElementType="jkff1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="dce_jkff1$6"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="qbar" Value="q2bar" Index="6"/>
+      <EProperty Type="QString" Name="state_sv" Value="0" Index="7"/>
+      <EProperty Type="QString" Name="q_sv" Value="0" Index="8"/>
+      <EProperty Type="QString" Name="dlyhl" Value="5n" Index="9"/>
+      <EProperty Type="QString" Name="dlylh" Value="5n" Index="10"/>
+    </CircuitElement>
+    <CircuitElement X="290.00" Y="-60.00" ID="41" ElementType="jkff1.dce" ModelName="">
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="Caption" Value="dce_jkff1$7"/>
+      <Property Type="ERotation" Name="Rotation" Value="0"/>
+      <Property Type="EFlip" Name="Flip" Value="0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <EProperty Type="QString" Name="q" Value="q3" Index="5"/>
+      <EProperty Type="QString" Name="qbar" Value="q3bar" Index="6"/>
+      <EProperty Type="QString" Name="state_sv" Value="0" Index="7"/>
+      <EProperty Type="QString" Name="q_sv" Value="0" Index="8"/>
+      <EProperty Type="QString" Name="dlyhl" Value="5n" Index="9"/>
+      <EProperty Type="QString" Name="dlylh" Value="5n" Index="10"/>
+    </CircuitElement>
+    <!--Circuit Node Information-->
+    <CircuitNode X="0" Y="0" Name="one">
+      <ElementNode ElementID="40" Name="k"/>
+      <ElementNode ElementID="40" Name="j"/>
+      <Shape>
+        <ShapeElement X="90" Y="-20" Type="0"/>
+        <ShapeElement X="90" Y="-80" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="one"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="one">
+      <ElementNode ElementID="35" Name="a"/>
+      <ElementNode ElementID="38" Name="j"/>
+      <ElementNode ElementID="39" Name="j"/>
+      <ElementNode ElementID="40" Name="j"/>
+      <ElementNode ElementID="41" Name="j"/>
+      <Shape>
+        <ShapeElement X="-280" Y="-140" Type="0"/>
+        <ShapeElement X="-220" Y="-140" Type="1"/>
+        <ShapeElement X="-220" Y="-80" Type="1"/>
+        <ShapeElement X="-70" Y="-80" Type="0"/>
+        <ShapeElement X="-70" Y="-140" Type="1"/>
+        <ShapeElement X="-220" Y="-140" Type="1"/>
+        <ShapeElement X="90" Y="-80" Type="0"/>
+        <ShapeElement X="90" Y="-140" Type="1"/>
+        <ShapeElement X="-70" Y="-140" Type="1"/>
+        <ShapeElement X="240" Y="-80" Type="0"/>
+        <ShapeElement X="240" Y="-140" Type="1"/>
+        <ShapeElement X="90" Y="-140" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="one"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="one">
+      <ElementNode ElementID="38" Name="j"/>
+      <ElementNode ElementID="38" Name="k"/>
+      <Shape>
+        <ShapeElement X="-220" Y="-80" Type="0"/>
+        <ShapeElement X="-220" Y="-20" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="one"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="one">
+      <ElementNode ElementID="39" Name="k"/>
+      <ElementNode ElementID="39" Name="j"/>
+      <Shape>
+        <ShapeElement X="-70" Y="-20" Type="0"/>
+        <ShapeElement X="-70" Y="-80" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="one"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="clk">
+      <ElementNode ElementID="37" Name="a"/>
+      <ElementNode ElementID="38" Name="clk"/>
+      <Shape>
+        <ShapeElement X="-260" Y="-50" Type="0"/>
+        <ShapeElement X="-220" Y="-50" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="clk"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="36" Name="a"/>
+      <ElementNode ElementID="38" Name="sd"/>
+      <ElementNode ElementID="38" Name="rd"/>
+      <Shape>
+        <ShapeElement X="-280" Y="-110" Type="0"/>
+        <ShapeElement X="-170" Y="-110" Type="1"/>
+        <ShapeElement X="-170" Y="10" Type="0"/>
+        <ShapeElement X="-240" Y="10" Type="1"/>
+        <ShapeElement X="-240" Y="-110" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="q0">
+      <ElementNode ElementID="38" Name="q"/>
+      <ElementNode ElementID="39" Name="clk"/>
+      <Shape>
+        <ShapeElement X="-120" Y="-80" Type="0"/>
+        <ShapeElement X="-100" Y="-80" Type="1"/>
+        <ShapeElement X="-100" Y="-50" Type="1"/>
+        <ShapeElement X="-70" Y="-50" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="q0"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="q1">
+      <ElementNode ElementID="39" Name="q"/>
+      <ElementNode ElementID="40" Name="clk"/>
+      <Shape>
+        <ShapeElement X="30" Y="-80" Type="0"/>
+        <ShapeElement X="60" Y="-80" Type="1"/>
+        <ShapeElement X="60" Y="-50" Type="1"/>
+        <ShapeElement X="90" Y="-50" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="q1"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="q2">
+      <ElementNode ElementID="40" Name="q"/>
+      <ElementNode ElementID="41" Name="clk"/>
+      <Shape>
+        <ShapeElement X="190" Y="-80" Type="0"/>
+        <ShapeElement X="210" Y="-80" Type="1"/>
+        <ShapeElement X="210" Y="-50" Type="1"/>
+        <ShapeElement X="240" Y="-50" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="q2"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="38" Name="sd"/>
+      <ElementNode ElementID="39" Name="sd"/>
+      <Shape>
+        <ShapeElement X="-170" Y="-110" Type="0"/>
+        <ShapeElement X="-20" Y="-110" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="39" Name="sd"/>
+      <ElementNode ElementID="40" Name="sd"/>
+      <Shape>
+        <ShapeElement X="-20" Y="-110" Type="0"/>
+        <ShapeElement X="140" Y="-110" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="40" Name="sd"/>
+      <ElementNode ElementID="41" Name="sd"/>
+      <Shape>
+        <ShapeElement X="140" Y="-110" Type="0"/>
+        <ShapeElement X="290" Y="-110" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="38" Name="rd"/>
+      <ElementNode ElementID="39" Name="rd"/>
+      <Shape>
+        <ShapeElement X="-170" Y="10" Type="0"/>
+        <ShapeElement X="-20" Y="10" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="39" Name="rd"/>
+      <ElementNode ElementID="40" Name="rd"/>
+      <Shape>
+        <ShapeElement X="-20" Y="10" Type="0"/>
+        <ShapeElement X="140" Y="10" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="zero">
+      <ElementNode ElementID="40" Name="rd"/>
+      <ElementNode ElementID="41" Name="rd"/>
+      <Shape>
+        <ShapeElement X="140" Y="10" Type="0"/>
+        <ShapeElement X="290" Y="10" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="zero"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <CircuitNode X="0" Y="0" Name="one">
+      <ElementNode ElementID="41" Name="k"/>
+      <ElementNode ElementID="41" Name="j"/>
+      <Shape>
+        <ShapeElement X="240" Y="-20" Type="0"/>
+        <ShapeElement X="240" Y="-80" Type="1"/>
+      </Shape>
+      <Property Type="QString" Name="NodeName" Value="one"/>
+      <Property Type="QString" Name="objectName" Value=""/>
+    </CircuitNode>
+    <!--Global Variables Information-->
+    <!--Text boxes-->
+    <TextBox Width="36.04768867403317" FontSize="10" X="-273.4645521685083" Y="-159.7869292292818" Height="23.73253852209945" FontFamily="MS Shell Dlg 2"><![CDATA[one]]></TextBox>
+    <TextBox Width="36.95853484806636" FontSize="10" X="-275.2862445165746" Y="-127.955081230663" Height="23.48892138121551" FontFamily="MS Shell Dlg 2"><![CDATA[zero]]></TextBox>
+    <!--Element Property Text Boxes-->
+  </ProjectPart>
+  <ProjectPart ID="OutputVariables">
+    <OutputVar Node="clk" Type="0" Name="clk" ACType="false"/>
+    <OutputVar Node="q0" Type="0" Name="q0" ACType="false"/>
+    <OutputVar Node="q1" Type="0" Name="q1" ACType="false"/>
+    <OutputVar Node="q2" Type="0" Name="q2" ACType="false"/>
+  </ProjectPart>
+  <ProjectPart ID="SolveBlockSet">
+    <SolveBlock>
+      <Property Type="SolveBlockType" Name="SolveBlockType" Value="2"/>
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <Statement ID="initial sol">
+        <Property Type="InitialSolveType" Name="InitialSolveType" Value="2"/>
+        <Property Type="QString" Name="FileName" Value=""/>
+        <Property Type="QString" Name="objectName" Value=""/>
+      </Statement>
+    </SolveBlock>
+    <SolveBlock>
+      <Property Type="SolveBlockType" Name="SolveBlockType" Value="3"/>
+      <Property Type="QString" Name="Comment" Value=""/>
+      <Property Type="QString" Name="objectName" Value=""/>
+      <Statement ID="initial sol">
+        <Property Type="InitialSolveType" Name="InitialSolveType" Value="1"/>
+        <Property Type="QString" Name="FileName" Value=""/>
+        <Property Type="QString" Name="objectName" Value=""/>
+      </Statement>
+      <Statement ID="(method) t_start">
+        <Property Type="QString" Name="objectName" Value=""/>
+        <EProperty Type="QString" Name="t_start" Value="0u" Index="0"/>
+      </Statement>
+      <Statement ID="(method) t_end">
+        <Property Type="QString" Name="objectName" Value=""/>
+        <EProperty Type="QString" Name="t_end" Value="800u" Index="0"/>
+      </Statement>
+      <Statement ID="(method) time_epsilon">
+        <Property Type="QString" Name="objectName" Value=""/>
+        <EProperty Type="QString" Name="time_epsilon" Value="0.1n" Index="0"/>
+      </Statement>
+      <Statement ID="output block">
+        <Property Type="QString" Name="FileName" Value="noname.dat"/>
+        <Property Type="int" Name="LimitLines" Value="100000"/>
+        <Property Type="bool" Name="Append" Value="false"/>
+        <Property Type="bool" Name="SweepFormat" Value="false"/>
+        <Property Type="bool" Name="Fourier" Value="false"/>
+        <Property Type="QString" Name="FixedInterval" Value=""/>
+        <Property Type="QString" Name="OutTStart" Value=""/>
+        <Property Type="QString" Name="OutTEnd" Value=""/>
+        <Property Type="QString" Name="NFourier" Value=""/>
+        <Property Type="QString" Name="DeltaPhase" Value=""/>
+        <Property Type="QString" Name="MinPhase" Value=""/>
+        <Property Type="QString" Name="MaxPhase" Value=""/>
+        <Property Type="QString" Name="objectName" Value=""/>
+        <EProperty Type="QStringList" Name="Output Variables" Value="clk, q0, q1, q2" Index="0"/>
+      </Statement>
+      <Statement ID="(method) offset_dgtl">
+        <Property Type="QString" Name="objectName" Value=""/>
+        <EProperty Type="QString" Name="offset_dgtl" Value="-2" Index="0"/>
+      </Statement>
+    </SolveBlock>
+  </ProjectPart>
+  <ProjectPart ID="ModelBlock"/>
+</SequelGUIProject>

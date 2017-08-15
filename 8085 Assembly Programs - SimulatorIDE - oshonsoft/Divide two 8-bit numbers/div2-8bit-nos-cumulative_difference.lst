@@ -1,0 +1,18 @@
+0001   0000             	.ORG	0000H
+0002   0000 21 50 00    START:	LXI	H,0050H	; Dividend
+0003   0003 7E          	MOV	A,M
+0004   0004 23          	INX	H	; Divisor
+0005   0005 46          	MOV	B,M
+0006   0006 0E 00       	MVI	C,00H	; Quotient
+0007   0008 B8          L1:	CMP	B
+0008   0009 DA 11 00    	JC	L2
+0009   000C 90          	SUB	B
+0010   000D 0C          	INR	C
+0011   000E C3 08 00    	JMP	L1
+0012   0011 23          L2:	INX	H	; To store the quotient
+0013   0012 71          	MOV	M,C
+0014   0013 23          	INX	H
+0015   0014 77          	MOV	M,A	; To store the remainder
+0016   0015 76          	HLT
+0017   0016             
+Number of errors = 0

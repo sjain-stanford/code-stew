@@ -1,0 +1,3 @@
+Enter the rms voltage: 220
+Enter the field constant: 1.738  Vs/rad
+Enter the armature resistance: .6

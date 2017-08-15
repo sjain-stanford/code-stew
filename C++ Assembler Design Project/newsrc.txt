@@ -1,0 +1,22 @@
+ORG 1000H
+LDA data1
+JZ LOCNa
+MVI data3 , 05
+STA data2
+JZ LOCNb
+ADD data2
+INR A
+JMP LOCNb
+HLT C
+LOCNa LDA data3
+LOCNb SUB B
+data1 EQU 12H
+data2 EQU 24H
+data3 EQU 56H
+A EQU 22
+B EQU 23
+C EQU 24
+END
+
+
+
